@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: sans-serif;
+  }
+}
+h1{
+ @apply text-3xl font-bold
+}
+.heading{
+  @apply text-xl sm:text-[26px] md:text-[34px] text-gray-800 font-medium mt-2 sm:mt-1
+}
+.theaders{
+  @apply text-[21px] bg-indigo-500 text-white font-semibold px-7 py-3
+}
+td{
+  @apply text-xl text-left px-7 py-5
+}
