@@ -45,7 +45,7 @@ const App = () => {
   };
   
   return (
-    <div className="h-screen scale-80 origin-top-left w-[125%]">
+    <div className="lg:h-screen lg:scale-80 lg:origin-top-left lg:w-[125%]">
       <Navbar clearAllData={clearAllData} />
 
       <div className={`${location.pathname === "/activity" ? 'h-screen' : 'h-auto'} px-4 sm:px-32 py-4 sm:py-9 bg-slate-200`}>
