@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Clock, Trash2 } from "lucide-react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Activity from "./pages/Activity-log/Activity";
 import Visualizer from "./pages/Home/Visualizer";
 import Guide from "./pages/Guide/Guide";
@@ -9,7 +9,6 @@ import Navbar from "./pages/navbar/Navbar";
 
 const App = () => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  const location = useLocation();
   const [nodesData, setNodesData] = useState([]);
 
   const fetchNodesData = async () => {
@@ -48,7 +47,7 @@ const App = () => {
     <div className="lg:h-screen lg:scale-80 lg:origin-top-left lg:w-[125%]">
       <Navbar clearAllData={clearAllData} />
 
-      <div className={`${location.pathname === "/activity" ? 'h-screen' : 'h-auto'} px-4 sm:px-32 py-4 sm:py-9 bg-slate-200`}>
+      <div className={`h-auto px-4 sm:px-32 py-4 sm:py-9 bg-slate-200`}>
         <Routes>
           <Route path="/" element={<Visualizer 
             activityData={nodesData} 
