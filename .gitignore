@@ -12,6 +12,7 @@ backend/node_modules
 frontend/.env
 backend/.env
 dist
+db_uri.txt
 dist-ssr
 *.local
 
