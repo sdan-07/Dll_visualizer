@@ -50,10 +50,14 @@ dll-visualizer/
 Create a `.env` file inside `backend/` if not exist:
 
 ```env
-MONGO_URI=your_mongodb_connection_string
+MONGO_CONNECTION_TARGET=atlas
+MONGO_URI=your_mongodb_atlas_connection_string
+MONGO_LOCAL_URI=mongodb://127.0.0.1:27017/dll_db
 PORT=3000
 CLIENT_URL=http://localhost:5173
 ```
+
+Set `MONGO_CONNECTION_TARGET=local` to use the local MongoDB Compass URI.
 
 Create a `.env` file inside `frontend/` if not exist:
 
@@ -94,3 +98,10 @@ npm run dev
 ```
 
 The frontend runs on `http://localhost:5173` by default.
+
+
+You can connect to the MongoDB Compass database using this connection string:
+
+```
+mongodb+srv://dll-vis-user:zeKvMVbbjd75smGv@backend0.tf8cmys.mongodb.net/dll_db
+```
