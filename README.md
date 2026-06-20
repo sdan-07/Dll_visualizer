@@ -43,23 +43,33 @@ dll-visualizer/
 ## Prerequisites
 
 - Node.js and npm
-- MongoDB database connection string
+- MongoDB
 
 ## Environment Variables
 
-Create a `.env` file inside `backend/` if not exist:
+Use `.env.example` as the template for local environment files.
+
+Create `backend/.env`:
+
+```bash
+cp .env.example backend/.env
+```
+
+Then keep only the backend values in `backend/.env` and update `MONGO_URI` with your MongoDB connection string:
 
 ```env
-MONGO_CONNECTION_TARGET=atlas
-MONGO_URI=your_mongodb_atlas_connection_string
-MONGO_LOCAL_URI=mongodb://127.0.0.1:27017/dll_db
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>
 PORT=3000
 CLIENT_URL=http://localhost:5173
 ```
 
-Set `MONGO_CONNECTION_TARGET=local` to use the local MongoDB Compass URI.
+If you run the Vite frontend separately, create `frontend/.env`:
 
-Create a `.env` file inside `frontend/` if not exist:
+```bash
+cp .env.example frontend/.env
+```
+
+Then keep only the frontend value in `frontend/.env`:
 
 ```env
 VITE_BACKEND_URL=http://localhost:3000
@@ -98,10 +108,3 @@ npm run dev
 ```
 
 The frontend runs on `http://localhost:5173` by default.
-
-
-You can connect to the MongoDB Compass database using this connection string:
-
-```
-mongodb+srv://dll-vis-user:zeKvMVbbjd75smGv@backend0.tf8cmys.mongodb.net/dll_db
-```
